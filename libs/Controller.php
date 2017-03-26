@@ -2,34 +2,34 @@
 
 class Controller {
 
-	private $_model;
-	private $_view;
+	private $class;
+	private $vista;
 
 	public function __construct($_model, $_view){
-		$this->_model = $_model;
-		$this->_view = $_view;
+		$this->class = $_model;
+		$this->vista = $_view;
 		$this->view = new View();
 		# Cargar Modelo
 		$this->loadModel();
 	}
 
-	public function loadModel(){
-		$model = $this->_model.'Model';
-		$file = 'Models/'.$model.'Model.php';
-		if (file_exists($file)){
-			require_once($file);
-			if (class_exists($model)){
-				$this->_model = new $model();
-			}
-		}
-	}
-
 	public function getClass(){
-		return $this->_model;
+		return $this->class;
 	}
 
 	public function getView(){
-		return $this->_view;
+		return $this->vista;
+	}
+
+	private function loadModel(){
+		$model = $this->class.'Model';
+		$file = 'Models/'.$model.'.php';
+		if (file_exists($file)){
+			require_once($file);
+			if (class_exists($model)){
+				$this->model = new $model();
+			}
+		}
 	}
 
 }

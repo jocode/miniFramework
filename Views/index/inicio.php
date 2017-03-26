@@ -1,5 +1,5 @@
 <h2>Esta es la vista renderizada, desde el constructor</h2>
-
+<?php print_r($this->datos); ?>
 <article>
 	<h3>Por qué el Framework Automáticamente llama al Modelo y a la Vista sin pasarselos por el constructor Padre</h3>
 	<p>
