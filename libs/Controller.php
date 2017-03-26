@@ -21,7 +21,7 @@ class Controller {
 			if (class_exists($model)){
 				$this->_model = new $model();
 			}
-		} else {echo 'No existe el modelo '.$model.'<br/>'; }
+		}
 	}
 
 	public function getClass(){
