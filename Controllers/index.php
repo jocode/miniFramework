@@ -1,9 +1,9 @@
 <?php 
 
-class index {
+class index extends Controller {
 
 	public function inicio(){
-		echo 'Esta es la ruta '.ROOT;
+		$this->view->render($this->getClass(), $this->getView());
 	}
 
 }

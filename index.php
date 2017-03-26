@@ -17,7 +17,6 @@ if(isset($ruta[2])){
 } else {
 	$params = '';
 }
-print_r($ruta);
 $load = new Autoload();
 $load->load($controller, $method, $params);
 
